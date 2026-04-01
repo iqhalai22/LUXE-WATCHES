@@ -1,20 +1,19 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Order - Luxe Watches</title>
-</head>
+<h2>Place Your Order</h2>
 
-<body style="font-family: Arial; padding: 20px;">
+<input id="name" placeholder="Your Name"><br><br>
+<input id="phone" placeholder="Phone Number"><br><br>
+<input id="address" placeholder="Address"><br><br>
 
-  <h2>Place Your Order</h2>
+<button onclick="sendToWhatsApp()">Place Order</button>
 
-  <form>
-    <input placeholder="Your Name" required><br><br>
-    <input placeholder="Phone Number" required><br><br>
-    <input placeholder="Address" required><br><br>
+<script>
+function sendToWhatsApp() {
+  var name = document.getElementById("name").value;
+  var phone = document.getElementById("phone").value;
+  var address = document.getElementById("address").value;
 
-    <button type="submit">Submit</button>
-  </form>
+  var message = "New Order:%0AName: " + name + "%0APhone: " + phone + "%0AAddress: " + address;
 
-</body>
-</html>
+  window.open("https://wa.me/919769391929?text=" + message);
+}
+</script>
