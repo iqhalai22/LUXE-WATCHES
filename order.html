@@ -1,14 +1,34 @@
-<script>
-function sendToWhatsApp() {
-  var name = document.getElementById("name").value;
-  var phone = document.getElementById("phone").value;
-  var address = document.getElementById("address").value;
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Order - Luxe Watches</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
 
-  var urlParams = new URLSearchParams(window.location.search);
-  var product = urlParams.get('product');
+<body style="font-family: Arial; padding: 20px;">
 
-  var message = "New Order:%0AProduct: " + product + "%0AName: " + name + "%0APhone: " + phone + "%0AAddress: " + address;
+  <h2>Place Your Order</h2>
 
-  window.open("https://wa.me/919769391929?text=" + message);
-}
-</script>
+  <input id="name" placeholder="Your Name"><br><br>
+  <input id="phone" placeholder="Phone Number"><br><br>
+  <input id="address" placeholder="Address"><br><br>
+
+  <button onclick="sendToWhatsApp()">Place Order</button>
+
+  <script>
+  function sendToWhatsApp() {
+    var name = document.getElementById("name").value;
+    var phone = document.getElementById("phone").value;
+    var address = document.getElementById("address").value;
+
+    var urlParams = new URLSearchParams(window.location.search);
+    var product = urlParams.get('product');
+
+    var message = "New Order:%0AProduct: " + product + "%0AName: " + name + "%0APhone: " + phone + "%0AAddress: " + address;
+
+    window.open("https://wa.me/919769391929?text=" + message);
+  }
+  </script>
+
+</body>
+</html>
